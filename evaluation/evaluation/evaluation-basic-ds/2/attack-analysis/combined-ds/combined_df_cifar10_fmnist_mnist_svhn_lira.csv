@@ -1,0 +1,134 @@
+,dataset,attack type,AUC,fpr@0.1,fpr@0.001
+mean Entire dataset,cifar10,lira,0.5007,0.1010,0.0010
+mean CLASS=0,cifar10,lira,0.5031,0.1021,0.0009
+mean CLASS=1,cifar10,lira,0.5002,0.1007,0.0010
+mean CLASS=2,cifar10,lira,0.5005,0.1000,0.0009
+mean CLASS=3,cifar10,lira,0.5012,0.1034,0.0008
+mean CLASS=4,cifar10,lira,0.4989,0.1020,0.0010
+mean CLASS=5,cifar10,lira,0.5012,0.1006,0.0009
+mean CLASS=6,cifar10,lira,0.5003,0.1010,0.0010
+mean CLASS=7,cifar10,lira,0.4995,0.0989,0.0008
+mean CLASS=8,cifar10,lira,0.5018,0.1010,0.0009
+mean CLASS=9,cifar10,lira,0.5002,0.0976,0.0013
+std Entire dataset,cifar10,lira,0.0027,0.0034,0.0003
+std CLASS=0,cifar10,lira,0.0083,0.0088,0.0009
+std CLASS=1,cifar10,lira,0.0103,0.0116,0.0008
+std CLASS=2,cifar10,lira,0.0072,0.0089,0.0010
+std CLASS=3,cifar10,lira,0.0086,0.0091,0.0008
+std CLASS=4,cifar10,lira,0.0075,0.0088,0.0009
+std CLASS=5,cifar10,lira,0.0080,0.0084,0.0008
+std CLASS=6,cifar10,lira,0.0065,0.0067,0.0008
+std CLASS=7,cifar10,lira,0.0069,0.0072,0.0007
+std CLASS=8,cifar10,lira,0.0086,0.0086,0.0008
+std CLASS=9,cifar10,lira,0.0061,0.0077,0.0015
+max Entire dataset,cifar10,lira,0.5071,0.1096,0.0017
+max CLASS=0,cifar10,lira,0.5168,0.1136,0.0032
+max CLASS=1,cifar10,lira,0.5228,0.1428,0.0036
+max CLASS=2,cifar10,lira,0.5165,0.1188,0.0036
+max CLASS=3,cifar10,lira,0.5133,0.1220,0.0040
+max CLASS=4,cifar10,lira,0.5137,0.1220,0.0036
+max CLASS=5,cifar10,lira,0.5181,0.1148,0.0028
+max CLASS=6,cifar10,lira,0.5115,0.1192,0.0032
+max CLASS=7,cifar10,lira,0.5178,0.1168,0.0032
+max CLASS=8,cifar10,lira,0.5167,0.1252,0.0032
+max CLASS=9,cifar10,lira,0.5122,0.1140,0.0068
+mean Entire dataset,fmnist,lira,0.5015,0.1007,0.0010
+mean CLASS=0,fmnist,lira,0.5054,0.1039,0.0009
+mean CLASS=1,fmnist,lira,0.5056,0.1018,0.0008
+mean CLASS=2,fmnist,lira,0.5019,0.1031,0.0011
+mean CLASS=3,fmnist,lira,0.4939,0.0947,0.0005
+mean CLASS=4,fmnist,lira,0.5009,0.0991,0.0010
+mean CLASS=5,fmnist,lira,0.5027,0.1031,0.0006
+mean CLASS=6,fmnist,lira,0.5033,0.1036,0.0012
+mean CLASS=7,fmnist,lira,0.4997,0.1006,0.0010
+mean CLASS=8,fmnist,lira,0.5010,0.0983,0.0012
+mean CLASS=9,fmnist,lira,0.5020,0.1013,0.0010
+std Entire dataset,fmnist,lira,0.0020,0.0022,0.0003
+std CLASS=0,fmnist,lira,0.0060,0.0078,0.0010
+std CLASS=1,fmnist,lira,0.0090,0.0083,0.0007
+std CLASS=2,fmnist,lira,0.0075,0.0075,0.0010
+std CLASS=3,fmnist,lira,0.0071,0.0080,0.0005
+std CLASS=4,fmnist,lira,0.0076,0.0076,0.0010
+std CLASS=5,fmnist,lira,0.0061,0.0078,0.0007
+std CLASS=6,fmnist,lira,0.0075,0.0074,0.0008
+std CLASS=7,fmnist,lira,0.0085,0.0073,0.0008
+std CLASS=8,fmnist,lira,0.0073,0.0079,0.0012
+std CLASS=9,fmnist,lira,0.0075,0.0092,0.0008
+max Entire dataset,fmnist,lira,0.5055,0.1048,0.0018
+max CLASS=0,fmnist,lira,0.5188,0.1173,0.0037
+max CLASS=1,fmnist,lira,0.5188,0.1170,0.0023
+max CLASS=2,fmnist,lira,0.5172,0.1180,0.0030
+max CLASS=3,fmnist,lira,0.5147,0.1143,0.0017
+max CLASS=4,fmnist,lira,0.5239,0.1183,0.0043
+max CLASS=5,fmnist,lira,0.5200,0.1160,0.0027
+max CLASS=6,fmnist,lira,0.5217,0.1160,0.0030
+max CLASS=7,fmnist,lira,0.5194,0.1180,0.0023
+max CLASS=8,fmnist,lira,0.5190,0.1233,0.0050
+max CLASS=9,fmnist,lira,0.5199,0.1163,0.0030
+mean Entire dataset,mnist,lira,0.5006,0.0995,0.0010
+mean CLASS=0,mnist,lira,0.4987,0.0986,0.0009
+mean CLASS=1,mnist,lira,0.5027,0.0978,0.0008
+mean CLASS=2,mnist,lira,0.5014,0.0983,0.0006
+mean CLASS=3,mnist,lira,0.5034,0.1008,0.0007
+mean CLASS=4,mnist,lira,0.4996,0.0986,0.0009
+mean CLASS=5,mnist,lira,0.5006,0.0996,0.0007
+mean CLASS=6,mnist,lira,0.5001,0.1009,0.0009
+mean CLASS=7,mnist,lira,0.5001,0.1000,0.0012
+mean CLASS=8,mnist,lira,0.5006,0.0983,0.0008
+mean CLASS=9,mnist,lira,0.4981,0.0972,0.0007
+std Entire dataset,mnist,lira,0.0023,0.0023,0.0003
+std CLASS=0,mnist,lira,0.0070,0.0102,0.0009
+std CLASS=1,mnist,lira,0.0072,0.0072,0.0007
+std CLASS=2,mnist,lira,0.0065,0.0076,0.0007
+std CLASS=3,mnist,lira,0.0063,0.0076,0.0007
+std CLASS=4,mnist,lira,0.0056,0.0073,0.0009
+std CLASS=5,mnist,lira,0.0066,0.0089,0.0010
+std CLASS=6,mnist,lira,0.0089,0.0086,0.0009
+std CLASS=7,mnist,lira,0.0075,0.0064,0.0012
+std CLASS=8,mnist,lira,0.0077,0.0080,0.0011
+std CLASS=9,mnist,lira,0.0084,0.0068,0.0007
+max Entire dataset,mnist,lira,0.5055,0.1068,0.0020
+max CLASS=0,mnist,lira,0.5151,0.1209,0.0030
+max CLASS=1,mnist,lira,0.5231,0.1109,0.0024
+max CLASS=2,mnist,lira,0.5093,0.1178,0.0027
+max CLASS=3,mnist,lira,0.5157,0.1152,0.0033
+max CLASS=4,mnist,lira,0.5118,0.1106,0.0041
+max CLASS=5,mnist,lira,0.5179,0.1181,0.0033
+max CLASS=6,mnist,lira,0.5186,0.1183,0.0037
+max CLASS=7,mnist,lira,0.5163,0.1114,0.0048
+max CLASS=8,mnist,lira,0.5150,0.1162,0.0038
+max CLASS=9,mnist,lira,0.5168,0.1110,0.0027
+mean Entire dataset,svhn,lira,0.5010,0.1000,0.0010
+mean CLASS=0,svhn,lira,0.5020,0.0968,0.0006
+mean CLASS=1,svhn,lira,0.4983,0.0988,0.0007
+mean CLASS=2,svhn,lira,0.5016,0.1003,0.0008
+mean CLASS=3,svhn,lira,0.5008,0.1009,0.0012
+mean CLASS=4,svhn,lira,0.5029,0.0995,0.0010
+mean CLASS=5,svhn,lira,0.5038,0.1027,0.0007
+mean CLASS=6,svhn,lira,0.5015,0.1021,0.0006
+mean CLASS=7,svhn,lira,0.4962,0.0974,0.0006
+mean CLASS=8,svhn,lira,0.5020,0.0998,0.0011
+mean CLASS=9,svhn,lira,0.5057,0.1036,0.0007
+std Entire dataset,svhn,lira,0.0022,0.0021,0.0002
+std CLASS=0,svhn,lira,0.0079,0.0083,0.0010
+std CLASS=1,svhn,lira,0.0035,0.0050,0.0005
+std CLASS=2,svhn,lira,0.0053,0.0064,0.0005
+std CLASS=3,svhn,lira,0.0062,0.0063,0.0008
+std CLASS=4,svhn,lira,0.0054,0.0068,0.0008
+std CLASS=5,svhn,lira,0.0061,0.0067,0.0006
+std CLASS=6,svhn,lira,0.0074,0.0082,0.0006
+std CLASS=7,svhn,lira,0.0070,0.0079,0.0006
+std CLASS=8,svhn,lira,0.0085,0.0079,0.0010
+std CLASS=9,svhn,lira,0.0102,0.0098,0.0007
+max Entire dataset,svhn,lira,0.5058,0.1052,0.0015
+max CLASS=0,svhn,lira,0.5192,0.1168,0.0044
+max CLASS=1,svhn,lira,0.5060,0.1072,0.0017
+max CLASS=2,svhn,lira,0.5139,0.1204,0.0019
+max CLASS=3,svhn,lira,0.5111,0.1156,0.0031
+max CLASS=4,svhn,lira,0.5120,0.1180,0.0043
+max CLASS=5,svhn,lira,0.5140,0.1226,0.0029
+max CLASS=6,svhn,lira,0.5168,0.1191,0.0021
+max CLASS=7,svhn,lira,0.5088,0.1158,0.0021
+max CLASS=8,svhn,lira,0.5212,0.1126,0.0036
+max CLASS=9,svhn,lira,0.5293,0.1271,0.0021
+average,average,,0.5010,0.1003,0.0010
