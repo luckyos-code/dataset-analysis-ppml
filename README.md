@@ -102,24 +102,20 @@ This is just a testing version for creating the COVID-19 experimental results by
 
 - download and extract the [COVID-19 Radiography Database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database?resource=download) to the data folder
 - install requirements
+- create ds_info
+  `python3.9 src/main.py -d covid --generate-ds-info --force-ds-info-regeneration`
 - deactivate tensorflow infos using environment variable
     `TF_CPP_MIN_LOG_LEVEL=1`
-- run one of the following codes using correct python version
-    `python3.9 src/main.py -d 'covid' -m 'cnn' -r 1 --run-amia-attack --force-model-retrain -n 'covid' -tm -em`
-
-    `python3.9 src/main.py -d 'covid' -m 'private_cnn' -r 2 --run-amia-attack --force-model-retrain -n 'covid' -tm -em --epsilon 30`
-    
-    `python3.9 src/main.py -d 'covid' -m 'private_cnn' -r 3 --run-amia-attack --force-model-retrain -n 'covid' -tm -em --epsilon 1`
+- run one of the following codes using correct python version  
+    `python3.9 src/main.py -d 'covid' -m 'cnn' -r 1 --run-amia-attack --force-model-retrain -n 'covid' -tm -em`  
+    `python3.9 src/main.py -d 'covid' -m 'private_cnn' -r 2 --run-amia-attack --force-model-retrain -n 'covid' -tm -em --epsilon 30`  
+    `python3.9 src/main.py -d 'covid' -m 'private_cnn' -r 3 --run-amia-attack --force-model-retrain -n 'covid' -tm -em --epsilon 1`  
 - copy all three run number folders into 'results/cnn/covid' and the same for the models folder
-- recompile attack results for missing files (rename wrong named result files because of dataset name if necessary)
-    `python3.9 src/main.py -d 'covid' -m 'cnn' -r 1 --run-amia-attack -n 'covid'`
-
-    `python3.9 src/main.py -d 'covid' -m 'cnn' -r 2 --run-amia-attack -n 'covid'`
-
-    `python3.9 src/main.py -d 'covid' -m 'cnn' -r 3 --run-amia-attack -n 'covid'`
-- compile attack evaluation
-    `python3.9 src/main.py -d 'covid' -m 'cnn' -ar 1 -n 'covid' -ca -ce`
-
-    `python3.9 src/main.py -d 'covid' -m 'cnn' -ar 2 -n 'covid' -ca -ce`
-
-    `python3.9 src/main.py -d 'covid' -m 'cnn' -ar 3 -n 'covid' -ca -ce`
+- recompile attack results for missing files (rename wrong named result files because of dataset name if necessary)  
+    `python3.9 src/main.py -d 'covid' -m 'cnn' -r 1 --run-amia-attack -n 'covid'`  
+    `python3.9 src/main.py -d 'covid' -m 'cnn' -r 2 --run-amia-attack -n 'covid'`  
+    `python3.9 src/main.py -d 'covid' -m 'cnn' -r 3 --run-amia-attack -n 'covid'`  
+- compile attack evaluation  
+    `python3.9 src/main.py -d 'covid' -m 'cnn' -ar 1 -n 'covid' -ca -ce`  
+    `python3.9 src/main.py -d 'covid' -m 'cnn' -ar 2 -n 'covid' -ca -ce`  
+    `python3.9 src/main.py -d 'covid' -m 'cnn' -ar 3 -n 'covid' -ca -ce`  
