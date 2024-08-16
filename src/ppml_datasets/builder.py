@@ -8,6 +8,7 @@ from ppml_datasets.datasets.fmnist import build_fmnist
 from ppml_datasets.datasets.mnist import build_mnist
 from ppml_datasets.datasets.svhn import build_svhn
 from ppml_datasets.datasets.emnist import build_emnist
+from ppml_datasets.datasets.covid19radiography import build_covid
 
 
 def parse_dataset_name_parameter(ds_mods: List[str]) -> Dict[str, List[Any]]:
@@ -67,6 +68,9 @@ def build_dataset(
 
     elif parameterized_name[0] == "emnist":
         ds = build_emnist(model_input_shape, batch_size, mod_params)
+
+    elif parameterized_name[0] == "covid":
+        ds = build_covid(model_input_shape, batch_size, mod_params)
 
     else:
         print(

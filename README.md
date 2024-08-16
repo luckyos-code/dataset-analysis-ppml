@@ -96,3 +96,30 @@ A full list of modifications is provided below:
 - mnist_iLX -> creates an imbalanced dataset version with an imbalance factor of X in linear mode. A higher imbalance mode indicates a higher dataset imbalance.
 - mnist_iNX -> creates an imbalanced dataset version with an imbalance factor of X in normal mode. A higher imbalance mode indicates a higher dataset imbalance. (normal and linear mode differ in how they apply the dataset imbalance)
 - cifar10_gray -> creates a grayscaled version of a dataset containing RGB color images.
+
+## COVID-19 Radiography Database
+This is just a testing version for creating the COVID-19 experimental results by hand.
+
+- download and extract the [COVID-19 Radiography Database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database?resource=download) to the data folder
+- install requirements
+- deactivate tensorflow infos using environment variable
+    `TF_CPP_MIN_LOG_LEVEL=1`
+- run one of the following codes using correct python version
+    `python3.9 src/main.py -d 'covid' -m 'cnn' -r 1 --run-amia-attack --force-model-retrain -n 'covid' -tm -em`
+
+    `python3.9 src/main.py -d 'covid' -m 'private_cnn' -r 2 --run-amia-attack --force-model-retrain -n 'covid' -tm -em --epsilon 30`
+    
+    `python3.9 src/main.py -d 'covid' -m 'private_cnn' -r 3 --run-amia-attack --force-model-retrain -n 'covid' -tm -em --epsilon 1`
+- copy all three run number folders into 'results/cnn/covid' and the same for the models folder
+- recompile attack results for missing files (rename wrong named result files because of dataset name if necessary)
+    `python3.9 src/main.py -d 'covid' -m 'cnn' -r 1 --run-amia-attack -n 'covid'`
+
+    `python3.9 src/main.py -d 'covid' -m 'cnn' -r 2 --run-amia-attack -n 'covid'`
+
+    `python3.9 src/main.py -d 'covid' -m 'cnn' -r 3 --run-amia-attack -n 'covid'`
+- compile attack evaluation
+    `python3.9 src/main.py -d 'covid' -m 'cnn' -ar 1 -n 'covid' -ca -ce`
+
+    `python3.9 src/main.py -d 'covid' -m 'cnn' -ar 2 -n 'covid' -ca -ce`
+
+    `python3.9 src/main.py -d 'covid' -m 'cnn' -ar 3 -n 'covid' -ca -ce`

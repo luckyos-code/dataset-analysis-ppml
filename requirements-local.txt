@@ -67,9 +67,10 @@ statsmodels==0.14.0
 tensorboard==2.13.0
 tensorboard-data-server==0.7.1
 tensorflow==2.13.0
+tensorflow-metal==1.0.0 ; sys_platform == "darwin" and platform_machine == "arm64"
 tensorflow-datasets==4.9.2
 tensorflow-estimator==2.13.0
-tensorflow-io-gcs-filesystem==0.32.0
+tensorflow-io-gcs-filesystem==0.34.0
 tensorflow-metadata==1.13.1
 tensorflow-privacy==0.8.10
 tensorflow-probability==0.20.1
