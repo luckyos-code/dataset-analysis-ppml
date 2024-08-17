@@ -103,7 +103,7 @@ This is just a testing version for creating the COVID-19 experimental results by
 - download and extract the [COVID-19 Radiography Database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database?resource=download) to the data folder
 - install requirements
 - create ds_info
-  `python3.9 src/main.py -d covid --generate-ds-info --force-ds-info-regeneration`
+  `python3.9 src/main.py -d 'covid' --generate-ds-info --force-ds-info-regeneration`
 - deactivate tensorflow infos using environment variable
     `TF_CPP_MIN_LOG_LEVEL=1`
 - run one of the following codes using correct python version  

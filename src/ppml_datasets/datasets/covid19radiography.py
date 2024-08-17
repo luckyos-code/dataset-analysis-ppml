@@ -39,6 +39,9 @@ class Covid19RadiographyDataset(AbstractDataset):
             builds_ds_info=builds_ds_info,
         )
 
+        # depreciated: resize covid images to 32x32 for ds_info calculcation
+        self.resize_ds_info = False
+
         self.train_val_test_split = train_val_test_split
 
         variants: List[Dict[str, Optional[str]]] = [
