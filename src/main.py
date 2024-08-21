@@ -57,6 +57,17 @@ def main():
     print("=========================================")
     print("=========================================")
 
+    # tensorflow metal problem with private model, so switch to CPU
+    if settings.model_name == 'private_cnn':
+        physical_devices = tf.config.list_physical_devices('GPU')
+        if physical_devices:
+            device_details = tf.config.experimental.get_device_details(physical_devices[0])
+            device_name = device_details.get('device_name', '').lower()
+            if 'metal' in device_name:
+                # If Apple Silicon GPU (using Metal) is detected, force TensorFlow to use CPU
+                print("INFO: Apple Silicon GPU detected. Tensorflow Privacy not working with Tensorflow Metal, so switching to CPU.")
+                tf.config.set_visible_devices([], 'GPU')
+
     # if no datasets were specified, then load them from paramter.json files for each run from a 'run name' folder
     if settings.datasets is None and (
         settings.is_train_model or settings.is_evaluating_model

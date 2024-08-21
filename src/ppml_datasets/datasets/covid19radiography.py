@@ -1,5 +1,5 @@
 import os
-from typing import Callable, Dict, List, Optional, Tuple
+from typing import Any, Callable, Dict, List, Optional, Tuple
 
 import gdown
 import numpy as np
@@ -14,28 +14,35 @@ class Covid19RadiographyDataset(AbstractDataset):
     def __init__(
         self,
         model_img_shape: Tuple[int, int, int],
-        dataset_path: str,
         builds_ds_info: bool = False,
-        batch_size: int = 32,
         preprocessing_func: Optional[Callable[[float], tf.Tensor]] = None,
+        batch_size: int = 32,
+        augment_train: bool = True,
+        dataset_path: str = "data",
+        train_val_test_split: Tuple[float, float, float] = (0.8, 0.05, 0.15),
     ):
         """Initialize the Covid19 dataset from AbstractDataset class."""
         super().__init__(
-            dataset_name="covid19-radiography",
+            tfds_name = None,
+            dataset_name="covid",#19-radiography",
             dataset_path=dataset_path,
             dataset_img_shape=(299, 299, 3),
             num_classes=2,
             random_seed=42,
             model_img_shape=model_img_shape,
-            train_val_test_split=(0.8, 0.05, 0.15),
             batch_size=batch_size,
             convert_to_rgb=False,
-            augment_train=True,
+            augment_train=augment_train,
             preprocessing_function=preprocessing_func,
             shuffle=True,
             is_tfds_ds=False,
             builds_ds_info=builds_ds_info,
         )
+
+        # depreciated: resize covid images to 32x32 for ds_info calculcation
+        self.resize_ds_info = False
+
+        self.train_val_test_split = train_val_test_split
 
         variants: List[Dict[str, Optional[str]]] = [
             {"activation": "relu", "pretraining": None},
@@ -66,6 +73,7 @@ class Covid19RadiographyDataset(AbstractDataset):
         Overwrites the _load_dataset functionality of the base class, since we cannot load the dataset from tfds here.
         """
         AUTOTUNE = tf.data.AUTOTUNE
+        np.random.seed(self.random_seed)
 
         if not os.path.exists(self.base_imgpath):
             url = "https://drive.google.com/uc?id=1ZMgUQkwNqvMrZ8QaQmSbiDqXOWAewwou&confirm=t"
@@ -139,3 +147,26 @@ class Covid19RadiographyDataset(AbstractDataset):
         self.ds_train = train_files.map(get_img, num_parallel_calls=AUTOTUNE)
         self.ds_val = val_files.map(get_img, num_parallel_calls=AUTOTUNE)
         self.ds_test = test_files.map(get_img, num_parallel_calls=AUTOTUNE)
+
+def build_covid(
+    model_input_shape: Tuple[int, int, int],
+    batch_size: int,
+    mods: Dict[str, List[Any]],
+    augment_train: bool = False,
+    builds_ds_info: bool = False,
+) -> AbstractDataset:
+    ds = Covid19RadiographyDataset(
+        model_img_shape=model_input_shape,
+        builds_ds_info=False,
+        batch_size=batch_size,
+        augment_train=False,
+    )
+    ds.load_dataset()
+
+    if mods:
+        print(
+            "Cannot use mods for Covid19RadiographyDataset!"
+        )
+        sys.exit(1)
+
+    return ds

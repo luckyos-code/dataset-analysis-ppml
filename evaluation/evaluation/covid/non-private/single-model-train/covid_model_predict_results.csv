@@ -1,0 +1,3 @@
+name,type,accuracy,f1-score,precision,recall,loss,class-wise
+covid19-radiography,train,0.9961,0.9960,0.9957,0.9962,0.0165,"{'0': 0.9967704728950404, '1': 0.9951674145667933}"
+covid19-radiography,test,0.9218,0.9185,0.9190,0.9180,0.2797,"{'0': 0.9349693251533742, '1': 0.9020332717190388}"

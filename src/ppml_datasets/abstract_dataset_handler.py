@@ -16,6 +16,7 @@ import tensorflow_datasets as tfds
 from imblearn.datasets import make_imbalance
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.utils import class_weight
+from skimage.transform import resize
 from tensorflow.keras.layers import (
     Layer,
     RandomFlip,
@@ -619,7 +620,12 @@ class AbstractDataset:
         counter = 0
         for img, label in self.ds_train:
             label = int(label.numpy().astype("uint8"))
-            img = img.numpy().astype("uint8")
+
+            # if covid resize from (299,299,3) to (32,32,3)
+            if self.dataset_name == 'covid' and self.resize_ds_info:
+                img = resize(img.numpy(), (32, 32)).astype("uint8")
+            else:
+                img = img.numpy().astype("uint8")
 
             # cut off last dimension if grayscale image
             if img.shape[2] == 1:
@@ -650,6 +656,10 @@ class AbstractDataset:
 
         counter = 0
         for img, label in self.ds_train:
+            # if covid resize from (299,299,3) to (32,32,3)
+            if self.dataset_name == 'covid' and self.resize_ds_info:
+                img = resize(img.numpy(), (32, 32)).astype("uint8")
+
             label = int(label.numpy().astype("uint8"))
             # check if grayscale or color image
             if img.shape[2] == 1:
@@ -658,7 +668,9 @@ class AbstractDataset:
                 )
                 max_bytes = 256
             else:
-                compressed_img = PIL.Image.fromarray(img.numpy().astype("uint8"))
+                if type(img) is not np.ndarray:
+                    img = img.numpy().astype("uint8")
+                compressed_img = PIL.Image.fromarray(img)
                 max_bytes = 256 * 3
 
             entropy = compressed_img.entropy()
@@ -703,6 +715,9 @@ class AbstractDataset:
         counter = 0
         class_dict: Dict[int, List[float]] = defaultdict(list)
         for img, label in self.ds_train:
+            # if covid resize from (299,299,3) to (32,32,3)
+            if self.dataset_name == 'covid' and self.resize_ds_info:
+                img = resize(img.numpy(), (32, 32)).astype("uint8")
             label = int(label.numpy().astype("uint8"))
 
             # check if grayscale or color image, convert to grayscale if RGB
@@ -777,6 +792,10 @@ class AbstractDataset:
         values = []
         labels = []
         for x, y in self.ds_train.as_numpy_iterator():
+            # if covid resize from (299,299,3) to (32,32,3)
+            if self.dataset_name == 'covid' and self.resize_ds_info:
+                x = resize(x, (32, 32))
+
             values.append(
                 x.reshape(-1)
             )  # transform (20, 20, 3) shape to (20*20*3) 1-D array shape
@@ -808,6 +827,10 @@ class AbstractDataset:
         class_values: Dict[str, list] = defaultdict(list)
         all_values: List = []
         for x, y in self.ds_train.as_numpy_iterator():
+            # if covid resize from (299,299,3) to (32,32,3)
+            if self.dataset_name == 'covid' and self.resize_ds_info:
+                x = resize(x, (32, 32))
+
             # combine all samples to one long list of values in a class
             # transform (20, 20, 3) shape to (20*20*3) 1-D array shape
             class_values[y].append(x.reshape(-1) / 255.0)

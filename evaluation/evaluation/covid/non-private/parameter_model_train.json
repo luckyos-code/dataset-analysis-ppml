@@ -1,0 +1,41 @@
+{
+  "run_number": 1,
+  "run_name": "covid-non-private",
+  "datasets": [
+    "covid"
+  ],
+  "model_name": "cnn",
+  "epochs": 30,
+  "batch": 256,
+  "learning_rate": 0.001,
+  "ema_momentum": 0.999,
+  "weight_decay": null,
+  "noise_multiplier": null,
+  "delta": null,
+  "l2_norm_clip": 1.0,
+  "privacy_epsilon": 1.0,
+  "num_microbatches": 256,
+  "num_shadow_models": 32,
+  "adam_epsilon": 1e-07,
+  "model_input_shape": [
+    32,
+    32,
+    3
+  ],
+  "random_seed": 42,
+  "execution_time": "0D - 1H - 13M - 55S",
+  "analysis_run_numbers": null,
+  "x_axis_name": null,
+  "x_axis_values": null,
+  "is_train_model": true,
+  "is_evaluating_model": true,
+  "is_compiling_evalulation": false,
+  "is_running_amia_attack": true,
+  "is_running_mia_attack": false,
+  "is_compiling_attack_results": false,
+  "is_force_model_retrain": true,
+  "is_force_stat_recalculation": false,
+  "is_generating_ds_info": false,
+  "is_forcing_ds_info_regeneration": false,
+  "is_generating_privacy_report": false
+}
