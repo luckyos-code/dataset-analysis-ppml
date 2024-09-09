@@ -1,5 +1,7 @@
 # Dataset Anaylsis for Privacy Preserving Machine Learning
 
+* Paper: [Assessing the Impact of Image Dataset Features on Privacy-Preserving Machine Learning](http://arxiv.org/abs/2409.01329)
+
 This project provides a framework to evaluate the influence of different image dataset characteristics on CNN-based machine learning classification in regard to model utility and model privacy.
 This framework enables to train multiple models trained on pre-selected MNIST-like datasets with different budgets.
 The private models (epsilon != infty) utilize DP-Adam to establish differential privacy.
